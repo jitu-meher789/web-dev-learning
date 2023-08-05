@@ -1,0 +1,39 @@
+map
+-------
+* map itself a function
+* map returns a new array equal in length to original array
+* map takes as input a callback function
+* the callback function takes 3 parameter (value, index, arr)
+
+* map will call the callback function multiple times (once for each value)
+* for each run of callback, map will pass value, index and original array to callback
+* callback will process the value and index and return a single value
+* single value returned by each run of callback will be collected in a new array
+* map returns that new array
+
+
+
+
+
+
+
+
+
+
+
+
+filter
+------------
+* filter is itself a function
+* Filter takes as input a callback function
+* The callback function takes 3 parameter (v, i, oarr);
+
+* Filter will call the callback multiple time (once for each value)
+* for each run of callback, filter will pass v, i, and oarr, to callback
+* callback will process the value and index and return a single boolean value
+
+* Single value returned by each run of callback will be used by filter
+* Whenever a true is received by filter (returned by callback)  then filter adds the v to an new array
+
+* filter returns that new array
+* length of returned array is equal to number of trues returned by callback

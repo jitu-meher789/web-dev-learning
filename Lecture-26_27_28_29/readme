@@ -1,0 +1,29 @@
+pepboard Project
+
+
+Features
+----------
+1. Draw
+2. Erase
+3. Notes
+4. Upload
+5. redo/undo
+6. Real time
+
+
+
+Should be Impliment
+------------------
+1. Shape
+2. Login
+3. Room
+4. Chat
+
+
+
+
+draw a line, there are 3 function, that helps to draw a line
+1. beginPath -> it just starts the drawing
+3. moveTo    -> it takes two arguments 1. iX  2. iY, its moves forword
+2. lineTo    -> it also takes tww arguments 1. fX  2. fY, it it stop at fX and fY
+4. stroke    -> it draw a line form moveTo to lineTo
