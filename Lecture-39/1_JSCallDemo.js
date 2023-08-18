@@ -21,7 +21,7 @@ let o2 = {
 };
 
 // obj.fun1("Navdeep", "Vikash");
-obj.fun1.call(o2, "Mehwish", "Shailja");
+// obj.fun1.call(o2, "Mehwish", "Shailja");
 // obj.fun1.apply(o2,["Mehwish", "Shailja", "Supriya"]);
 // let bindFunction = obj.fun1.bind(o2, "Mehwish", "Shailja", "Supriya");
 // bindFunction();
@@ -34,5 +34,5 @@ obj.fun1.call(o2, "Mehwish", "Shailja");
 
 // call is a function, it is available on all functions. it can be used to call the functions.
 // the use case is, if  you want to override the default this.
-// 
+// apply is similar to call, but it passes its argument in an array
 // bind is dis-similar, it doesn't make a call , it gives you a new function to call

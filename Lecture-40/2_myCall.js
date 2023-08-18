@@ -1,9 +1,14 @@
 Function.prototype.myCall = function() {
-    let arr = Array.from(arguments);
+    let orgFun = this;
+    let argsArray = Array.from(arguments);
+    let newThis = argsArray[0];
+    let newParams = argsArray.splice(1);
 
-    let orgThis = arr[0];
-    let orgEle = arr.slice(1);
-    
+    // orgFun.apply(newThis,newParams);
+    newThis.fun = orgFun;
+    newThis.fun(...newParams);
+    delete newThis.fun;
+
 }
 
 
@@ -23,4 +28,8 @@ let o2 = {
     fullName: 'Neha',
     age: 21
 };
-obj.fun1.call(o2, "Shouvik", "Sanju");
+
+
+obj.fun1.myCall(o2, "Vikas", "Navdeep", "Jitu", "Rajneesh", "Kapil");
+
+

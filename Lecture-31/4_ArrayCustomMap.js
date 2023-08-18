@@ -39,5 +39,5 @@ let ansArr = narr.myMap((v, i, oarr) =>{
     let lname = name[1];
 
     return fName[0] + "." + lname[0] + ".";
-}) ;
+});
 console.log(ansArr);

@@ -1,4 +1,4 @@
-function fun1(a, b) {
+function fun(a, b) {
     console.log(a + " " + b);
 
 
