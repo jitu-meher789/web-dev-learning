@@ -6,7 +6,7 @@ let arr = [
     {name: "E", age : 44, gender : "M"},
     {name: "F", age : 88, gender : "F"},
     {name: "G", age : 36, gender : "M"},
-    {name: "H", age : 47, gender : "F"},
+    {name: "H", age : 23, gender : "F"},
 ];
 
 

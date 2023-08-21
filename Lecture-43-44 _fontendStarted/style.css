@@ -1,0 +1,47 @@
+h1 {
+  color: red;
+}
+#myFirstButton {
+  border-radius: 5px;
+  background-color: azure;
+  width: 200px;
+  margin-left: 600px;
+  padding: 20px;
+  cursor: pointer;
+}
+#myFirstButton:hover {
+  transform: scale(1.02);
+}
+#container {
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.folder {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(30, 64, 78, 1) 53%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  height: auto;
+  width: 100px;
+  margin: 5px;
+  padding: 10px;
+}
+
+.folder [action] {
+  text-decoration: underline;
+  color: yellowgreen;
+  cursor: pointer;
+}
+.folder [purpose="name"] {
+  color: white;
+  margin-top: 50px;
+  word-wrap: break-word;
+}
