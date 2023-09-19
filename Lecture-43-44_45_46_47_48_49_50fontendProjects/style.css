@@ -1,0 +1,183 @@
+/* h1 {
+  color: red;
+}
+#btnAddFolder {
+  border-radius: 5px;
+  background-color: azure;
+  width: 200px;
+  margin-left: 600px;
+  padding: 20px;
+  cursor: pointer;
+}
+#btnAddFolder:hover {
+  transform: scale(1.02);
+}
+
+#divBreadCrumb {
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.path {
+  background-color: grey;
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+  border-right: 3px solid black;  
+}
+.path:hover{
+  background-color: white;
+  color: blue;
+  text-decoration: underline;
+}
+#divContainer {
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.folder {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(30, 64, 78, 1) 53%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background-color: #162C35;
+  height: auto;
+  width: 100px;
+  margin: 5px;
+  padding: 10px;
+}
+
+.folder [action] {
+  text-decoration: underline;
+  color: yellowgreen;
+  cursor: pointer;
+}
+.folder [purpose="name"] {
+  color: white;
+  margin-top: 50px;
+  word-wrap: break-word;
+} */
+
+
+
+
+#header {
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+
+}
+#header button {
+  padding: 20px;
+  margin: 10px;
+  font-weight: 900  ;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#header button:hover {
+  background-color: rgb(213, 220, 225);
+  border-radius: 10px;
+  transform: scale(1.05);
+}
+#breadcrumb {
+  border: 1px solid black;
+  margin: 10px;
+  display: flex;
+}
+#breadcrumb a{
+ background-color: tomato;
+ padding: 10px;
+ border-right: 5px solid black;
+}
+
+#breadcrumb a:hover{
+  background-color: aqua;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#container {
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+#app {
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+}
+
+.folder {
+  background-color: teal;
+  height: 120px;
+  width: 150px;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid red;
+  color: white;
+}
+
+.folder div[purpose=name] {
+  margin-top: 80px;
+}
+
+
+.folder [action] {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+
+.folder [action]:hover {
+  color: blue;
+}
+
+
+
+
+
+
+
+
+
+.text-file {
+  background-color: rgb(145, 1, 116);
+  height: 120px;
+  width: 150px;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid red;
+  color: white;
+}
+
+.text-file div[purpose=name] {
+  margin-top: 80px;
+}
+
+
+.text-file [action] {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+
+.text-file [action]:hover {
+  color: blue;
+}

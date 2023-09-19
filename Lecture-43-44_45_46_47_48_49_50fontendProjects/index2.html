@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <button id="addFolder">Add Folder</button>
+        <button id="addTextFile">Add Text File</button>
+    </div>
+
+
+    <div id="breadcrumb">
+        <a purpose="path" rid="-1">Root</a>
+    </div>
+
+
+    <div id="container">
+    </div>
+
+
+    <div id="app">
+    </div>
+
+
+    <template id="template">
+        <div class="folder" rid="" pid="">
+            <span action="delete">Delete</span>
+            <span action="rename">Rename</span>
+            <span action="view">View</span>
+            <div purpose="name"></div>
+        </div>
+        <div class="text-file" rid="" pid="">
+            <span action="delete">Delete</span>
+            <span action="rename">Rename</span>
+            <span action="view">View</span>
+            <div purpose="name"></div>
+        </div>
+        <a purpose="path" rid="-1">Root</a>
+    </template>
+
+    <script type="text/javascript" src="main3.js"></script>
+</body>
+</html>
