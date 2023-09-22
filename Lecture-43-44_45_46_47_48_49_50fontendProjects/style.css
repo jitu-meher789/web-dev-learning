@@ -114,12 +114,6 @@
 }
 
 
-#app {
-  border: 1px solid black;
-  margin: 10px;
-  padding: 10px;
-}
-
 .folder {
   background-color: teal;
   height: 120px;
@@ -180,4 +174,79 @@
 
 .text-file [action]:hover {
   color: blue;
+}
+
+/* ----------------- app view section-------------------- */
+
+#app {
+  border: 1px solid black;
+  margin: 10px;
+}
+
+#app-title-bar {
+  display: flex;
+  background-color: cyan;
+  height: 40px;
+  padding-top: 10px;
+
+}
+#app-title {
+  width: 93%;
+  text-align: center;
+  border-right: 2px solid green;
+}
+
+#app-menu-bar {
+  display: flex;
+  background-color: teal;
+  height: 40px;
+}
+
+#app-body {
+  display: flex;
+  background-color: springgreen;
+  height: 500px;
+}
+
+.notepad-body {
+  height: 100%;
+  width: 100%;
+}
+
+.notepad-body textarea {
+  height: 100%;
+  width: 100%;
+}
+
+.notepad-menu {
+  width: 100%;
+  padding: 5px;
+}
+.notepad-menu * {
+  margin: 0px 5px;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.notepad-menu span{
+  vertical-align: bottom;
+  border-radius: 5px;
+  background-color: teal;
+  border: 1px solid white;
+}
+
+/* .notepad-menu span:hover{
+  vertical-align: bottom;
+  background-color: black;
+  color: teal;
+
+  border: 1px solid black;
+} */
+.nodepad-menu [pressed=true] {
+  background-color: white;
+  color: teal;
+}
+
+.notepad-menu input[type=color] {
+  width: 30px;
 }
