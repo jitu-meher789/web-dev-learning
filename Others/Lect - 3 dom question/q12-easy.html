@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:  1px solid;
+        }
+        .red {
+            background-color: red;
+            padding: 2rem;
+            width: 20rem;
+            height: 20rem;
+        }
+        .yellow {
+            background-color: yellow;
+            width: 10re;
+            height: 10rem;
+            margin: auto;
+            margin-top: 5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="red">
+        <div class="yellow"></div>
+    </div>
+
+    <script>
+        let red = document.querySelector(".red");
+        let yellow = document.querySelector(".yellow");
+
+        yellow.addEventListener("click", function(e) {
+            alert("yellow was clicked");
+            e.stopPropagation();
+        })
+
+        red.addEventListener("click", function(e) {
+            alert("red was clicked");
+        })
+    </script>
+</body>
+</html>
+
+
+<!-- evetn bubbling -->

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>say hello</button>
+    <ul id="list"></ul>
+
+    <script>
+        let btn = document.querySelector("button");
+        let ul = document.querySelector("#list");
+
+
+        btn.addEventListener("click", function(e) {
+            let text = "hello";
+            let li = document.createElement("p");
+            li.innerText = text;
+
+            ul.append(li);
+
+        })
+    </script>
+</body>
+</html>

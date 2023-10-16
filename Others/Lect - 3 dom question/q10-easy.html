@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #pass{
+            display: block;
+            margin: auto;
+            margin-top: 10rem;
+            width: 25rem;
+            height: 3rem;
+            font-size: 2rem;
+        }
+        p{
+            text-align: center;
+            font-size: 3rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="pass">
+    <p>Caps on!</p>
+    
+
+    <script>
+        let isShiftOn = false;
+        let CapsOn = false;
+        let input = document.querySelector("input");
+        let p = document.querySelector("p");
+
+
+        input.addEventListener("keypress", function(e) {
+            
+            if(e.getModifierState("CapsLock")) {
+                p.style.display = "block";
+                e.preventDefault();
+            }else {
+                p.style.display  = "none";
+            }
+
+            if(!isShiftOn) e.preventDefault();
+        })
+
+
+        document.addEventListener("keydown", function(e) {
+            if(e.key == "Shift"){
+                isShiftOn = true;
+            }
+        })
+
+        
+        document.addEventListener("keyup", function(e) {
+            if(e.key == "Shift"){
+                isShiftOn = false;
+            }
+        })
+    </script>
+</body>
+</html>
+
+<!-- capslock and shift on concept for input field -->

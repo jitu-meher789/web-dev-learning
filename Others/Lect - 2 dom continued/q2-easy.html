@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe, commodi magni delectus obcaecati voluptatum
+        doloribus dolores beatae dolor molestias non atque odit dolore tempora! Quisquam libero minus, ab laudantium
+        accusantium impedit ut cupiditate doloribus mollitia, quod rerum necessitatibus dignissimos repellendus
+        praesentium, suscipit assumenda excepturi porro! Aliquam voluptatum maxime, sint eum dignissimos nihil nobis
+        modi. Perferendis iste laborum ea optio tenetur iure enim? Nulla eum error possimus molestiae atque tempore vero
+        rerum cupiditate ut sapiente? Praesentium, dolorem nihil fuga deleniti vitae sunt doloribus tempore harum.
+        Accusamus tempora beatae repellat. Aut cupiditate eos veniam alias velit deleniti quas consectetur tenetur id
+        necessitatibus.
+    </p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat provident ex doloremque, facilis itaque animi
+        sunt at officia obcaecati enim sapiente reprehenderit beatae esse ea nobis a sequi ab temporibus dignissimos.
+        Mollitia illo in, ex exercitationem expedita sed sequi dolorum perspiciatis commodi et optio placeat fugit atque
+        aperiam? Qui, laborum?
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ratione maxime quae, harum quisquam quos suscipit
+        repudiandae minus quod atque unde obcaecati consequatur corporis consequuntur quo provident officiis optio nulla
+        pariatur in! Ratione dolor voluptas quos doloremque. Laboriosam dolore veniam reprehenderit molestiae, minus
+        vel! Architecto non quos laborum laudantium officia tempore ut nostrum nisi ex harum blanditiis et, dolores
+        cupiditate reiciendis deleniti voluptatum quis quibusdam! Qui est quidem ipsam at.
+    </p>
+    <script>
+        let pTags = document.querySelectorAll("p");
+
+        for(let i = 0; i < pTags.length; i++) {
+            pTags[i].addEventListener("click", function(e) {
+                if(e.detail == 3){
+                    e.currentTarget.style.background = "none";
+                }else if(e.detail == 2) {
+                    e.currentTarget.style.background = "blue";
+                }else if(e.detail == 1) {
+                    e.currentTarget.style.background = "red";
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

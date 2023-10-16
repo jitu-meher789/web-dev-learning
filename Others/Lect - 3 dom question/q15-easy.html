@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p data-test="abc">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, consequatur nostrum itaque ratione
+        cumque facere quisquam consequuntur accusamus eaque, nisi quidem ab dignissimos molestiae ad placeat quasi
+        similique officiis quo sit fuga distinctio earum dolorum. Veniam enim voluptatibus sequi soluta hic sed! Quidem
+        expedita blanditiis officiis adipisci alias voluptas vel voluptate, repudiandae accusantium ad, magnam rerum,
+        ipsum ipsa numquam illo similique quia perspiciatis ex temporibus nesciunt quos esse. Officiis non, quaerat
+        voluptas et praesentium cum labore architecto aperiam ratione quam sapiente quia nisi minima quasi, error ullam
+        libero ex, delectus quisquam nam dignissimos possimus eius doloribus suscipit. Id, vero quisquam.F
+    </p>
+
+    <script>
+
+
+        function getAttribute(attribute) {
+            let allElements = document.querySelectorAll("*");
+            let required = [];
+
+            for(let i = 0; i < allElements.length; i++) {
+                if(allElements[i].getAttribute(attribute) != null) {
+                    required.push(allElements[i]);
+                }
+            }
+            return required;
+        }
+
+        console.log(getAttribute("data-test"));
+    </script>
+</body>
+
+</html>

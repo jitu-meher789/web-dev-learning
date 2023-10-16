@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 2rem;
+            min-height: 5rem;
+            min-width: 5rem;
+        }
+    </style>
+</head>
+<body>
+    <div style="border: 1px solid red;">
+        <div style="border: 1px solid black;">
+            <div style="border: 1px solid green;">
+                <div style="border: 1px solid blue;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // write a script using the method queryselector that goes into the lowest depth div and delete it 
+
+        let div = document.querySelector("div");
+
+        while(div.querySelector("div")){
+            div = div.querySelector("div");
+        }
+        // div.remove();
+    </script>
+    
+</body>
+</html>
