@@ -232,9 +232,15 @@
   vertical-align: bottom;
   border-radius: 5px;
   background-color: teal;
-  border: 1px solid white;
+  border: 1px solid black;
 }
 
+.notepad-menu span:hover{
+  vertical-align: bottom;
+  border-radius: 5px;
+  /* background-color: teal; */
+  border: 1px solid white;
+}
 /* .notepad-menu span:hover{
   vertical-align: bottom;
   background-color: black;
@@ -242,7 +248,7 @@
 
   border: 1px solid black;
 } */
-.nodepad-menu [pressed=true] {
+.notepad-menu [pressed=true] {
   background-color: white;
   color: teal;
 }

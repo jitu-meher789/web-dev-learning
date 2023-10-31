@@ -378,7 +378,8 @@
     let spanTextColor = divAppMenuBar.querySelector("[action=fg-color]");
     let spanFontFamily = divAppMenuBar.querySelector("[action=font-family]");
     let spanFontSize = divAppMenuBar.querySelector("[action=font-size]");
-
+    let spanDonwload = divAppMenuBar.querySelector("[action=download]");
+    let inputUpload = divAppMenuBar.querySelector("[action=upload]");
 
 
     spanSave.addEventListener("click", saveNotepad);
@@ -389,12 +390,24 @@
     spanTextColor.addEventListener("change", makeNotepadTextColor);
     spanFontFamily.addEventListener("change", makeNotepadFontFamily);
     spanFontSize.addEventListener("change", makeNotepadFontSize);
-
+    spanDonwload.addEventListener("click", downloadNotepad);
+    inputUpload.addEventListener("change", uploadNotepad);
  
 
   }
 
 
+  function downloadNotepad() {
+    let fid = parseInt(divAppTitle.getAttribute("rid"));
+    let resource = resources.find(r => r.rid == fid);
+    console.log(resource);
+  }
+
+
+  function uploadNotepad() {
+    console.log("in upload")
+
+  }
 // 
   function saveNotepad () {
     let fid = parseInt(divAppTitle.getAttribute("rid"));
@@ -409,10 +422,14 @@
     let inputTextColor = divAppMenuBar.querySelector("[action=fg-color]");
     let selectFontFamily = divAppMenuBar.querySelector("[action=font-family]");
     let selectFontSize = divAppMenuBar.querySelector("[action=font-size]");
+   
+
+
+
 
     resource.isBold = spanBold.getAttribute("pressed") == "true";
     resource.isItalic = spanItalic.getAttribute("pressed") == "true";
-    resource.isUnderline = spanUnderline.getAttribute("pressed") == "true";
+    resource.isUnderline = spanUnderline.getAttribute("pressed") == "true"; 
     resource.bgColor = inputBGColor.value;
     resource.textColor = inputTextColor.value;
     resource.fontFamily = selectFontFamily.value;
