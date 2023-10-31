@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid;
+            height: 20rem;
+            width: 35rem;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <button>add</button>
+    <script>
+        let div = document.querySelector("div");
+        let button = document.querySelector("button");
+
+        button.addEventListener("click", () => {
+            let p = document.createElement("p");
+            p.innerText = "lorem faja;jfkl;a jfal;fjl;afj;lafljlfjlafjkahfkahfafa fhkalhfklahfkahfk fahfkalhfkahf fahflafhkafhkafh af";
+            div.append(p);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .container{
+            height: 30vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .avatars {
+            height: 10rem;
+            width: 10rem;
+            border-radius: 50%;
+            background-color: red;
+            margin-left: -2rem;
+            border: 5px solid white;
+
+        }
+        .last-avatar {
+            text-align: center;
+            font-size: 4rem;
+            font-weight: bold;
+            padding-top: 2rem;
+            background-color: silver;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="avatars" style="background-image: url(https://i.pinimg.com/564x/3d/64/7e/3d647e4920e197bc6956f750f2f78cc0.jpg); background-size: cover;"></div>
+        <div class="avatars" style="background-image: url(https://i.pinimg.com/564x/db/98/48/db984804b1c11c4815171faf6cd1175e.jpg);  background-size: cover;"></div>
+        <div class="avatars" style="background-image: url(https://i.pinimg.com/236x/ae/21/ea/ae21ea3602cff4ba9aef31b7e2a54347.jpg);  background-size: cover;"></div>
+        <div class="avatars last-avatar">+2</div>
+    </div>
+</body>
+</html>

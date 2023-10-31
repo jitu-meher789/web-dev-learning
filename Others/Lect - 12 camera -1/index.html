@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        video {
+            width: 20rem;
+            height: 20rem;
+            margin: auto;
+            /* margin-top: calc((100vh - 20rem) / 2); */
+        }
+    </style>
+</head>
+
+<body>
+    <video controls autoplay></video>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+
+
+    <script>
+        let video = document.querySelector("video");
+        let startBtn = document.querySelector("#start");
+        let stopBtn = document.querySelector("#stop");
+
+
+        let mediaRecorder;
+        let chunks = [];
+
+        
+        startBtn.addEventListener("click", () => {
+            mediaRecorder.start();
+        });
+        stopBtn.addEventListener("click", () => {
+            mediaRecorder.stop();
+        });
+
+
+
+        navigator.mediaDevices.getUserMedia({ video: true, audio: true})
+        .then(function (mediaStream) {
+
+            mediaRecorder = new MediaRecorder(mediaStream);
+            
+            mediaRecorder.addEventListener("dataavailable", (e) => {
+                chunks.push(e.data)
+;            })
+
+            mediaRecorder.addEventListener("stop", () => {
+                let blob = new Blob(chunks, { type: "video/mp4" });
+                let a  = document.createElement("a");
+                a.href = URL.createObjectURL(blob);
+                a.download = "jitumeher.mp4";
+                a.click();
+                a.remove();
+            })
+
+            video.srcObject = mediaStream;
+
+
+
+        }).catch(function (error) {
+            console.log(error);
+        })
+    </script>
+</body>
+
+</html>

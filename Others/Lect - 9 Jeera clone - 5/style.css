@@ -1,0 +1,256 @@
+/* 
+<!-- <div class="modal-container">
+<div class="writing-area" contenteditable></div>
+<div class="filter-area">
+    <div class="modal-filter pink"></div>
+    <div class="modal-filter blue"></div>
+    <div class="modal-filter green"></div>
+    <div class="modal-filter black"></div>
+</div>
+</div> --> */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+div {
+  /* border: 2px solid red; */
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.navbar {
+  height: 10%;
+  background-color: hsl(0, 0%, 20%);
+  display: flex;
+}
+
+.grid {
+  background-color: #f2f2f2;
+  height: 90%;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 1.5rem;
+}
+
+.filter-container,
+.action-container {
+  height: 75%;
+  background-color: #444444;
+  margin-left: 3.5rem;
+  margin-top: 1.2vh;
+  border-radius: 3px;
+}
+
+.filter-container {
+  width: 12rem;
+  display: flex;
+}
+
+.action-container {
+  width: 6rem;
+}
+.action-container div:hover {
+  cursor: pointer;
+}
+
+.filter {
+  /* border: 1px solid red; */
+  width: 25%;
+  height: 100%;
+}
+
+.filter:hover {
+  background-color: #393939;
+}
+
+.filter div {
+  margin: auto;
+  margin-top: 2.1vh;
+  border-radius: 3px;
+  height: 50%;
+  width: 50%;
+  /* background-color: yellow; */
+}
+.filter div:hover {
+  cursor: pointer;
+}
+.pink-color-btn,
+.pink {
+  background-color: #d595aa;
+}
+
+.blue-color-btn,
+.blue {
+  background-color: #5ecdde;
+}
+
+.green-color-btn,
+.green {
+  background-color: #91e6c7;
+}
+
+.black-color-btn,
+.black {
+  background-color: black;
+}
+
+.action-container {
+  display: flex;
+}
+.add,
+.delete {
+  padding-top: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  height: 100%;
+}
+.add {
+  font-size: 2.1rem;
+}
+.delete {
+  font-size: 2rem;
+}
+.add:hover {
+  background-color: #393939;
+}
+.delete:hover {
+  background-color: #393939;
+}
+
+.modal-container {
+  height: 18rem;
+  width: 35rem;
+  display: flex;
+  box-shadow: 5px 5px 20px 3px #646363;
+  position: fixed;
+  top: calc((100vh - 18rem) / 2);
+  left: calc((100vw - 35rem) / 2);
+}
+.writing-area {
+  background-color: white;
+  height: 100%;
+  width: 70%;
+  padding: 2rem;
+  outline: none;
+  font-size: 1.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-y: auto;
+}
+.filter-area {
+  background-color: #444;
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.modal-filter {
+  width: 50%;
+  height: 2.5rem;
+  border: 1px solid;
+  margin-top: 1rem;
+  opacity: 0.7;
+}
+.modal-filter:hover {
+  opacity: 1;
+}
+
+.ticket {
+  width: 15%;
+  height: 20%;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.ticket-color {
+  width: 100%;
+  height: 15%;
+}
+.ticket-box {
+  width: 100%;
+  height: 90%;
+  background-color: #e6f4ff;
+  outline: none;
+  text-align: center;
+  overflow-y: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.ticket-id {
+  background-color: #e6f4ff;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  padding: 5px;
+  color: #989393;
+}
+.active-modal-filter {
+  border: 3px solid white;
+  /* background-color: #d595aa; */
+}
+
+/* [active-modal-filter] {
+    
+  } */
+
+.delete-state, .selected-filter {
+  background-color: rgb(0, 0, 0) !important;
+}
+
+
+
+@media (max-width:768px) {
+  .filter-container {
+    width: 18rem;
+  }
+  .action-container {
+    width: 10rem;
+  }
+  .add {
+    font-size: 4.1rem;
+  }
+  .delete {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .filter-container {
+    height: 75%;
+    margin-left: 0.5rem;
+  }
+
+  .modal-container {
+    height: 13rem;
+    width: 20rem;
+    top: calc((100vh - 10rem) / 2);
+    left: calc((100vw - 20rem) / 2);
+  }
+
+  .ticket {
+    width: 90%;
+    height: 20%;
+    margin-bottom: 2rem;
+  }
+
+  .add {
+    font-size: 2.1rem;
+  }
+  .delete {
+    font-size: 2rem;
+  }
+}

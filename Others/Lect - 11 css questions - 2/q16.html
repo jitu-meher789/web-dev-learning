@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .box {
+            height: 20rem;
+            width: 20rem;
+            background-color: black;
+            margin: auto;
+            margin-top: calc((100vh - 20rem) / 2);
+        }
+
+        .leg1,
+        .leg2 {
+            width: 80%;
+            height: 1.5rem;
+            background-color: red;
+            border: 1px solid;
+        }
+
+        .leg1 {
+            transform: rotate(45deg) translateX(125px) translateY(80px);
+        }
+
+        .leg2 {
+            transform: rotate(-45deg) translateX(-60px) translateY(111px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="leg1"></div>
+        <div class="leg2"></div>
+    </div>
+</body>
+
+</html>
+<!-- create a image-final by styling the following html (it should be responsive) -->

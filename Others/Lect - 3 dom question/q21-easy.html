@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi, modi consequatur in quibusdam ipsa labore
+        facilis porro repellendus. Eum enim in culpa suscipit fuga, blanditiis debitis voluptatem dolor non earum minima
+        tempora, quod vel ullam porro ea ipsam aliquid voluptatum illo deserunt tenetur voluptas quibusdam consequuntur.
+        Perferendis voluptate vitae odit aspernatur quo ab sapiente consequuntur nulla. Praesentium nam similique aut
+        recusandae, culpa iusto blanditiis natus possimus libero, nulla eum modi, fuga mollitia inventore vitae odit rem
+        officia officiis aliquid voluptatum deserunt suscipit iste. Tempora doloremque id nostrum totam nemo quod et.
+        Quibusdam, laudantium quasi! Hic beatae id aperiam, quos optio ad, atque deserunt accusantium nemo qui
+        repellendus! Voluptatibus nam facilis molestias, perspiciatis atque unde dicta tempora dolor quasi impedit.
+        Doloribus expedita dolorem voluptatem sint eius obcaecati dolor. Doloribus eum nihil asperiores perspiciatis.
+        Dolor, facilis. Aperiam dolor laborum voluptatem reiciendis omnis illo earum hic aut veritatis voluptas
+        consectetur nisi, tenetur quam?</p>
+
+    <script>
+
+        //Q.  change the backgroudn color of selected area
+        document.addEventListener("mouseup", function (e) {
+
+            let selection = window.getSelection().getRangeAt(0);
+
+            let selectedText = selection.extractContents();
+
+            let span = document.createElement("span");
+
+            span.style.backgroundColor = "yellow";
+
+            span.appendChild(selectedText);
+
+            selection.insertNode(span);
+        })
+    </script>
+</body>
+
+</html>
