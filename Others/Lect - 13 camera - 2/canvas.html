@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            /* overflow: hidden; */
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <img src="i.jpg">
+    <script>
+        let canvas = document.querySelector("canvas");
+        let img = document.querySelector("img");
+
+
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        let tool = canvas.getContext("2d");
+
+        img.addEventListener("load", function(e) {
+            tool.drawImage(img,0,0);
+        })
+
+        // tool.moveTo(0, 0);
+        // tool.lineTo(300, 400);
+        // tool.strokeStyle = "green";
+        // tool.lineWidth = 10;
+        // tool.stroke();
+    </script>
+</body>
+</html>

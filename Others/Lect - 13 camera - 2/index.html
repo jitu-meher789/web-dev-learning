@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="video-container">
+        <video autoplay></video>
+    </div>
+    <button id="record"><div></div></button>
+    <button id="capture"><div></div></button>
+
+
+    <script>
+        let video = document.querySelector("video");
+        let recordBtn = document.querySelector("#record");
+        let recDiv = recordBtn.querySelector("div");
+        let captureBtn = document.querySelector("#capture");
+        let capDiv = captureBtn.querySelector("div");
+
+        let isRecording = false;
+
+        let mediaRecorder;
+        let chunks = [];
+
+
+        // startBtn.addEventListener("click", () => {
+        //     mediaRecorder.start();
+        // });
+        // stopBtn.addEventListener("click", () => {
+        //     mediaRecorder.stop();
+        // });
+
+        recordBtn.addEventListener("click", (e) => {
+            if (isRecording) {
+                mediaRecorder.stop();
+                isRecording = false;
+                recDiv.classList.remove("record-animation");
+            } else {
+                mediaRecorder.start();
+                isRecording = true;
+                recDiv.classList.add("record-animation");
+            }
+        });
+
+        captureBtn.addEventListener("click", function () {
+
+            capDiv.classList.add("capture-animation");
+            
+            setTimeout(function () {
+                capDiv.classList.remove("capture-animation");
+            },1000)
+
+            let canvas = document.createElement("canvas");
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            let tool = canvas.getContext("2d");
+            tool.drawImage(video, 0, 0);
+
+
+            let link = canvas.toDataURL();
+            let a = document.createElement("a");
+            a.href = link;
+            a.download = "img.png";
+            a.click();
+            a.remove();
+            canva.remove();
+        })
+
+        navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+            .then(function (mediaStream) {
+
+                mediaRecorder = new MediaRecorder(mediaStream);
+
+                mediaRecorder.addEventListener("dataavailable", (e) => {
+                    chunks.push(e.data)
+                        ;
+                })
+
+                mediaRecorder.addEventListener("stop", () => {
+                    let blob = new Blob(chunks, { type: "video/mp4" });
+                    let a = document.createElement("a");
+                    a.href = URL.createObjectURL(blob);
+                    a.download = "jitumeher.mp4";
+                    a.click();
+                    a.remove();
+                })
+
+                video.srcObject = mediaStream;
+
+
+
+            }).catch(function (error) {
+                console.log(error);
+            })
+    </script>
+</body>
+
+</html>

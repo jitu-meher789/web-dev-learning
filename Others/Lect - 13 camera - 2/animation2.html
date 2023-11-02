@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            /* overflow: hidden; */
+        }
+
+        div {
+            width: 5rem;
+            height: 5rem;
+            border: none;
+            background-color: aqua;
+            margin: auto;
+            margin-top: calc((100vh - 10rem) / 2);
+            animation: q1;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+
+        }
+
+        @keyframes q1 {
+            0% {
+                transform: scale(1);
+                transform: rotate(0deg);
+                border-radius: 0%;
+                background-color: red;
+            }
+
+            50% {
+                transform: scale(2);
+                transform: rotate(180deg);
+                border-radius: 50%;
+                background-color: green;
+            }
+
+            100% {
+                transform: scale(1);
+                transform: rotate(0deg);
+                border-radius: 0%;
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
