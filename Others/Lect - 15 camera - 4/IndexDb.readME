@@ -1,0 +1,53 @@
+IndexDB =>
+    Database inside your browser (NoSQL)
+    we dont need to create it
+    SQL => Relationla Database (Tables and relate)
+
+
+    NoSQL database  => we dont need tables, dont need relation just need objects  (JS)
+
+
+    Instead of creating table, create a collection of objects with similiar kind of data
+
+
+    (you create multiple collection, we cannot create relations)
+
+    collection = [
+        {Name: Anirudh, RollNo:1, College Name : DU},
+        {Name: Ram, College Name :DU, Address :Delhi}
+    ]
+
+    a single nosql db can contain multiple collection and index
+    IndexDB we call these collections objectStore. If you want create an objectstore you can only do that inside of the function of upgrade event.
+    
+
+
+
+
+
+
+
+
+
+SQL Database => (you create table, tables can be realted)
+
+Name    College Name  Address
+Anirudh DU            Delhi
+Ram     DU            Delhi
+
+
+
+
+
+
+
+
+Differences between localStorage and IndexDB
+    * localStorage is a sort of database jo ki browser me hota he, and index DB does the same
+    * So what is the difference between localStorage and IndexDB
+
+ 
+    * localStorage KEY VALUE pari use karte hein,, (objects were not stored) it is used to store only strings
+    * IndexDB => Directly objects are stored, andy kind of data can store
+    * localStorage => max size 5 mb
+    * IndexDB => has no such limit (2gb - 3gb) In a sense secondary (they were persisted)

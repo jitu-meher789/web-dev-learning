@@ -1,0 +1,34 @@
+first open a indexDB database - Camera, 1, [collection/objectStore = Gallery]
+
+3 -> function -- add, view, delete
+
+Render all images and videos in Gallery
+
+All Those media should have 2 things -- delete and download
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Blob me url bana reh the, that was working as a pointer
+
+On the other hand for image it is a data url, it is not a pointer, its a data itself
