@@ -5,6 +5,8 @@ let captureBtn = document.querySelector("#capture");
 let capDiv = captureBtn.querySelector("div");
 let body = document.querySelector("body");
 
+
+
 let isRecording = false;
 let mediaRecorder;
 let chunks = [];
@@ -68,10 +70,12 @@ for(let i = 0; i < filters.length; i++) {
 // });
 
 recordBtn.addEventListener("click", (e) => {
+    let recording = document.querySelector("#recording");
     if (isRecording) {
         mediaRecorder.stop();
         isRecording = false;
         recDiv.classList.remove("record-animation");
+        recording.style.display = "none";
         alert("Video Recored");
     } else {
         mediaRecorder.start();
@@ -80,6 +84,7 @@ recordBtn.addEventListener("click", (e) => {
         currZoom = 1;
         video.style.transform = `scale(${currZoom})`;
         isRecording = true;
+        recording.style.display = "block";
         recDiv.classList.add("record-animation");
     }
 });
@@ -130,7 +135,7 @@ captureBtn.addEventListener("click", function () {
     // location.assign("gallery.html");
 })
 
-navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+navigator.mediaDevices.getUserMedia({ video: true,})
     .then(function (mediaStream) {
 
         mediaRecorder = new MediaRecorder(mediaStream);

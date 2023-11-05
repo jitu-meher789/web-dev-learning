@@ -25,9 +25,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"
         integrity="sha512-ND11pbmp3M3Wldj90In1EUlHIt8T7O6FykizQ/yXrFjHtpX+D0SX+/IVeLjqAV91r/Lavq4BpWJIC0nUtw5Kvw=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-    </script>
+        </script>
 
-    <script >
+    <script>
         // type="text/jsx"
 
 
@@ -63,23 +63,23 @@
 
 
         // class components
-        class Counter extends React.Component{
+        class Counter extends React.Component {
             state = {
                 currVal: 1
             };
             render() {
                 return (
                     <div>
-                        <button 
-                            onClick = {() => {
-                                this.setState({currVal: this.state.currVal + 1});
+                        <button
+                            onClick={() => {
+                                this.setState({ currVal: this.state.currVal + 1 });
                             }}
                         >+</button>
                         <div>{this.state.currVal}</div>
 
-                        <button 
-                            onClick = {() => {
-                                this.setState({currVal: this.state.currVal - 1});
+                        <button
+                            onClick={() => {
+                                this.setState({ currVal: this.state.currVal - 1 });
                             }}
                         >-</button>
 

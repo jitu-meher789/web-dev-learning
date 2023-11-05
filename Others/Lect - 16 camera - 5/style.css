@@ -9,22 +9,24 @@ body {
 #record,
 #capture {
   z-index: 3;
-  height: 5rem;
-  width: 5rem;
+  height: 3rem;
+  width: 3rem;
   border-radius: 50%;
   outline: none;
-  border: 5px solid white;
+  border: 3px solid white;
   position: fixed;
   cursor: pointer;
   background-color: black;
+  top: 54vh;
+  right: 2rem;
 }
 #record {
-  top: 45vh;
-  right: 20px;
+  top: 46vh;
+  right: 2rem;
 }
 #record div {
-  width: 65%;
-  height: 60%;
+  width: 55%;
+  height: 40%;
   margin: auto;
   border-radius: 50%;
   outline: none;
@@ -32,18 +34,18 @@ body {
   background-color: red;
 }
 #capture div {
-  width: 65%;
-  height: 60%;
+  width: 55%;
+  height: 40%;
   margin: auto;
   border-radius: 50%;
   outline: none;
   border: none;
   background-color: white;
 }
-#capture {
-  top: 57vh;
-  right: 20px;
-}
+/* #capture {
+  top: 54vh;
+  right: 2rem;
+} */
 
 .video-container {
   height: 100vh;
@@ -56,20 +58,41 @@ video {
 }
 
 .record-animation {
-  animation: zoom-in-out 0.8s infinite;
+  animation: zoom-in-out 1s infinite;
 }
 .capture-animation {
   animation: zoom-in-out-cap 1s;
 }
 
-@keyframes zoom-in-out {
+/* @keyframes zoom-in-out {
   0% {
     transform: scale(1);
+    box-shadow: 10px 20px 20px red;
   }
   50% {
     transform: scale(1.3);
+    box-shadow: 10px 20px 20px red;
   }
   100% {
+    transform: scale(1);
+    box-shadow: 10px 20px 20px red;
+  }
+} */
+
+@keyframes zoom-in-out {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 44, 44, 0.634);
+    box-shadow: 0 0 0 0 rgba(204, 44, 44, 0.634);
+    transform: scale(1);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+    box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+    transform: scale(1.2);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(255, 200, 0, 0);
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0);
     transform: scale(1);
   }
 }
@@ -87,14 +110,14 @@ video {
 }
 
 .filter-container {
-  width: 5rem;
-  height: 60vh;
+  width: 4rem;
+  height: 40vh;
   border: 1px solid;
   background-color: wheat;
   position: fixed;
-  left: 7rem;
-  top: 8rem;
-  border-radius: 10px;
+  left: 0.5rem;
+  top: 11.8rem;
+  border-radius: 10px px;
   z-index: 3;
 }
 
@@ -114,64 +137,95 @@ video {
 
 .filter-div {
   height: 100vh;
-  width: 62vw;
+  width: 100vw;
   z-index: 0;
   position: fixed;
   top: 0;
-  left: 18.2rem;
+  left: 0rem;
 }
 .zoom-container {
-  width: 4rem;
-  height: 10rem;
+  width: 3rem;
+  height: 6rem;
   background-color: #ffffff47;
-  border: 1px solid;
   position: fixed;
   right: 2rem;
-  top: 8rem;
+  top: 30vh;
   z-index: 3;
+  border-radius: 5px;
+  border: 1px solid white;
 }
 
 .zoom-in {
-  width: 4rem;
+  width: 3rem;
   height: 50%;
-  border: 2px solid white;
-  font-size: 4rem;
+  border: 1px solid white;
+  border-radius: 5px 5px 0px 0px;
+  font-size: 40px;
   font-weight: bolder;
   color: white;
   text-align: center;
 }
 .zoom-out {
-  width: 4rem;
+  width: 3rem;
   height: 50%;
-  border: 2px solid white;
-  font-size: 4rem;
+  border: 1px solid white;
+  border-radius: 0px 0px 5px 5px;
+  font-size: 40px;
   font-weight: bolder;
   color: white;
   text-align: center;
 }
-.zoom-in,.zoom-out:hover {
+.zoom-in,
+.zoom-out:hover {
   cursor: pointer;
 }
 
-
 #gallery {
   position: fixed;
-    top: 38rem;
-    left: 7rem;
-    width: 5rem;
-    height: 3rem;
-    font-size: 1.4rem;
-    background-color: violet;
+  top: 63vh;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  background-image: url("https://i.pinimg.com/564x/30/7d/90/307d9055ff4499196ce6c58ee63e3794.jpg");
+  background-size: contain;
+  border: 2px solid white;
+  z-index: 3;
 }
+
 #gallery:hover {
   cursor: pointer;
 }
 
 h5 {
   position: fixed;
-  left: 5rem;
   color: red;
-  left: 20rem;
-  top: 1rem
+  right: 2rem;
+  top: 40rem;
+  display: none;
+}
 
+@media (max-width: 550px) {
+  .zoom-container {
+    position: fixed;
+    top: 30vh;
+    right: 0.5rem;
+  }
+
+  #gallery {
+    position: fixed;
+    top: 63vh;
+    right: 0.5rem;
+  }
+
+  #capture {
+    position: fixed;
+    top: 54vh;
+    right: 0.5rem;
+  }
+  #record {
+    top: 46vh;
+    right: 0.5rem;
+  }
 }
