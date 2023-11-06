@@ -25,8 +25,8 @@ body {
   right: 2rem;
 }
 #record div {
-  width: 55%;
-  height: 40%;
+  width: 35%;
+  height: 28%;
   margin: auto;
   border-radius: 50%;
   outline: none;
@@ -86,13 +86,13 @@ video {
     transform: scale(1);
   }
   70% {
-    -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-    box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+    -moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
     transform: scale(1.2);
   }
   100% {
     -moz-box-shadow: 0 0 0 0 rgba(255, 200, 0, 0);
-    box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
     transform: scale(1);
   }
 }
@@ -228,4 +228,19 @@ h5 {
     top: 46vh;
     right: 0.5rem;
   }
+}
+
+.timer {
+  /* background-color: red; */
+  border: 2px solid white;
+  border-radius: 5px;
+  width: 5rem;
+  height: 2rem;
+  position: fixed;
+  right: 46rem;
+  top: 95vh;
+  text-align: center;
+  font-size: 1.6rem;
+  color: white;
+  display: none;
 }

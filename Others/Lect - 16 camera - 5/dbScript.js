@@ -1,6 +1,8 @@
 let req = indexedDB.open("Camera", 1);
 let db;
-let gbody = document.querySelector("body");
+let gbody = document.querySelector(".media-container-hero");
+let backBtn = document.querySelector(".nav-cam");
+
 
 req.addEventListener("success", function () {
   db = req.result;
@@ -18,6 +20,9 @@ req.addEventListener("error", function () {
   alert("error in creation");
 });
 
+backBtn.addEventListener("click", function(){
+  location.assign("index.html");
+});
 function addMedia(media, type) {
   if (!db) return;
   let obj = { mId: Date.now(), media, type };
@@ -55,8 +60,9 @@ function viewMedia() {
         div.innerHTML = `<div class="media">
                             <video src="${url}" autoplay loop controls muted></video>
                         </div>
-                        <button class="download">Download</button>
-                        <button class="delete" data-id="${mo.mId}"   >Delete</button>`;
+                        <span class="material-symbols-outlined">videocam</span>
+                        <button class="download"><span class="material-symbols-outlined" id="download-icon">download</span></button>
+                        <button class="delete" data-id="${mo.mId}"><span class="material-symbols-outlined" id="delete-icon">delete</span></button>`;
         gbody.append(div);
       } else {
         linkForDownloadBtn = mo.media;
@@ -65,10 +71,11 @@ function viewMedia() {
                                 <img src="${mo.media}">
                             </a>
                         </div>
-                        <button class="download">Download</button>
-                        <button class="delete" data-id="${mo.mId}">Delete</button>`;
+                        <span class="material-symbols-outlined">image</span>
+                        <button class="download"><span class="material-symbols-outlined" id="download-icon">download</span></button>
+                        <button class="delete" data-id="${mo.mId}"><span class="material-symbols-outlined" id="delete-icon">delete</span></button>`;                
       }
-
+      
       let downloadBtn = div.querySelector(".download");
       let deleteBtn = div.querySelector(".delete");
       downloadBtn.addEventListener("click", function (e) {
