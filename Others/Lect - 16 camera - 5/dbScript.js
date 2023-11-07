@@ -3,7 +3,6 @@ let db;
 let gbody = document.querySelector(".media-container-hero");
 let backBtn = document.querySelector(".nav-cam");
 
-
 req.addEventListener("success", function () {
   db = req.result;
 });
@@ -20,7 +19,7 @@ req.addEventListener("error", function () {
   alert("error in creation");
 });
 
-backBtn.addEventListener("click", function(){
+backBtn.addEventListener("click", function () {
   location.assign("index.html");
 });
 function addMedia(media, type) {
@@ -73,9 +72,9 @@ function viewMedia() {
                         </div>
                         <span class="material-symbols-outlined">image</span>
                         <button class="download"><span class="material-symbols-outlined" id="download-icon">download</span></button>
-                        <button class="delete" data-id="${mo.mId}"><span class="material-symbols-outlined" id="delete-icon">delete</span></button>`;                
+                        <button class="delete" data-id="${mo.mId}"><span class="material-symbols-outlined" id="delete-icon">delete</span></button>`;
       }
-      
+
       let downloadBtn = div.querySelector(".download");
       let deleteBtn = div.querySelector(".delete");
       downloadBtn.addEventListener("click", function (e) {
@@ -93,10 +92,16 @@ function viewMedia() {
 
       deleteBtn.addEventListener("click", function (e) {
         let id = e.currentTarget.getAttribute("data-id");
-        // remove from db
-        deleteMedia(id);
-        // remove from ui
-        e.currentTarget.parentElement.remove();
+
+        let temp = confirm("Are you sure you want to delete");
+        if (!temp) {
+          return;
+        } else {
+          // remove from db
+          deleteMedia(id);
+          // remove from ui
+          e.currentTarget.parentElement.remove();
+        }
       });
 
       gbody.append(div);

@@ -69,7 +69,7 @@ recordBtn.addEventListener("click", (e) => {
     mediaRecorder.stop();
     isRecording = false;
     recDiv.classList.remove("record-animation");
-    recording.style.display = "none";
+    // recording.style.display = "none";
     timer.style.display  = "none";
     clearInterval(Interval);
     minutes = "00";
@@ -85,7 +85,7 @@ recordBtn.addEventListener("click", (e) => {
     currZoom = 1;
     video.style.transform = `scale(${currZoom})`;
     isRecording = true;
-    recording.style.display = "block";
+    // recording.style.display = "block";
     timer.style.display  = "block";
     recDiv.classList.add("record-animation");
     clearInterval(Interval);

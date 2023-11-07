@@ -206,29 +206,6 @@ h5 {
   display: none;
 }
 
-@media (max-width: 550px) {
-  .zoom-container {
-    position: fixed;
-    top: 30vh;
-    right: 0.5rem;
-  }
-
-  #gallery {
-    position: fixed;
-    top: 63vh;
-    right: 0.5rem;
-  }
-
-  #capture {
-    position: fixed;
-    top: 54vh;
-    right: 0.5rem;
-  }
-  #record {
-    top: 46vh;
-    right: 0.5rem;
-  }
-}
 
 .timer {
   /* background-color: red; */
@@ -237,10 +214,40 @@ h5 {
   width: 5rem;
   height: 2rem;
   position: fixed;
-  right: 46rem;
+  right: 2rem;
   top: 95vh;
   text-align: center;
   font-size: 1.6rem;
   color: white;
   display: none;
 }
+
+  @media (max-width: 550px) {
+    .zoom-container {
+      position: fixed;
+      top: 30vh;
+      right: 0.5rem;
+    }
+  
+    #gallery {
+      position: fixed;
+      top: 63vh;
+      right: 0.5rem;
+    }
+  
+    #capture {
+      position: fixed;
+      top: 54vh;
+      right: 0.5rem;
+    }
+    #record {
+      position: fixed;
+      top: 46vh;
+      right: 0.5rem;
+    }
+    .timer {
+      position: fixed;
+      top: 82vh;
+      right: 0.5rem;
+    }
+  }

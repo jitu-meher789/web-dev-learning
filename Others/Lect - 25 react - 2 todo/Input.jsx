@@ -1,13 +1,26 @@
 class Input extends React.Component {
-    render() {
-        // state = {task: ""}
-
-        return (
-            <div>
-                <input type="text"  />
-                <button>Submit</button>
-            </div>
-        );
-    }
+  state = { task: "" };
+  
+  render() {
+    return (
+      <div>
+        <input
+          type="text"
+          value={this.state.task}
+          onChange={(e) => {
+            this.setState({ task: e.currentTarget.value });
+          }}
+        />
+        <button
+          onClick={() => {
+            this.props.taskHandlerFunction(this.state.task);
+            this.setState({ task: "" });
+          }}
+        >
+          Submit
+        </button>
+      </div>
+    );
+  }
 }
 // export default Input;
