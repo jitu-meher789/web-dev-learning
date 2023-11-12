@@ -46,6 +46,15 @@ class Table extends React.Component {
     ],
   };
 
+
+
+  async componentDidMount() {
+    let data = await fetch("/movies");
+    let json = await data.json();
+    // console.log(json);
+    this.setState({allMovies: json});
+  }
+
   render() {
     let numberOfPage = Math.ceil(this.state.allMovies.length / 5);
     let arr = [];
@@ -71,10 +80,10 @@ class Table extends React.Component {
               return (
                 <tr>
                   <td>{el.title}</td>
-                  <td>{el.genre}</td>
-                  <td>{el.stock}</td>
-                  <td>{el.rate}</td>
-                  <td>Lke</td>
+                  <td>{el.genre.name}</td>
+                  <td>{el.numberInStock}</td>
+                  <td>{el.dailyRentalRate}</td>
+                  <td>like</td>
                   <td>
                     {" "}
                     <button type="button" className="btn btn-danger">
@@ -104,11 +113,7 @@ class Table extends React.Component {
                 </li>
               );
             })}
-            {/* <li className="page-item">
-              <a className="page-link" href="#">
-                1
-              </a>
-            </li> */}
+
             <li className="page-item">
               <a className="page-link" href="#">
                 Next
