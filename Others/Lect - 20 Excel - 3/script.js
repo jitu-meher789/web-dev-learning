@@ -133,10 +133,10 @@ function updateDownstreamElements(elementAddress) {
 
   // 2 - jis element ko update kar reh hein uska formula le aao
   let currFormula = dataObject[elementAddress].formula;
-  
+
   // formula ko space k basis par split maro
   let formulaArr = currFormula.split(" ");
-  // split marne k baad jo array mili uspar loop mara and formula me 
+  // split marne k baad jo array mili uspar loop mara and formula me
   // jo variable hein (cells) nko unki value se repalce  kardo, using valObj
 
   for (let j = 0; j < formulaArr.length; j++) {
@@ -145,30 +145,23 @@ function updateDownstreamElements(elementAddress) {
     }
   }
 
-
-
   // 3 - create karlo wapas formula from the array by joining it
   currFormula = formulaArr.join(" ");
-
-
 
   //4- evaluate the new value usng eval function
   let newValue = eval(currFormula);
 
-
   // update the cell(jispar function call hua) in dataObject
   dataObject[elementAddress].value = newValue;
-
 
   // 5 - ui par update kardo new value
   let cellOnUi = document.querySelector(`[data-address=${elementAddress}]`);
   cellOnUi.innerText = newValue;
 
-
   // 6- downstream leke aao jis elemnt ko update kara just abhi, kyun ki uspar bhu kuch elemnt depennd kar sakte hein
   // unko bhi update karna padega
   let currCellDownstream = dataObject[elementAddress].downstream;
-  // check karo ki downstream me elements hai kya, agar han to un sab par yehi function call kardo(recursively) 
+  // check karo ki downstream me elements hai kya, agar han to un sab par yehi function call kardo(recursively)
   // jise wo bhi update ho jaye with new value
   if (currCellDownstream.length > 0) {
     for (let k = 0; k < currCellDownstream.length; k++) {
