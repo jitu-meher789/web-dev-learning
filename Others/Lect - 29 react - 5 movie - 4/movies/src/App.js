@@ -4,6 +4,7 @@ import Catatory from "./Catagory.jsx";
 import Search from "./Search.jsx";
 import Table from "./Table.jsx";
 
+
 class App extends React.Component {
   state = {
     noOfMovies: 0,
@@ -25,7 +26,8 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar />
+        {/* <Navbar /> */}
+
         <div className="row">
           <div className="col-2 p-4">
             <Catatory recieveCurrGenre={this.recieveCurrGenre} />
@@ -45,12 +47,14 @@ class App extends React.Component {
                 <Table
                   sendData={this.recieveMoviesData}
                   searchString={this.state.searchString}
-                  currGenre = {this.state.currGenre}
+                  currGenre={this.state.currGenre}
                 />
               </div>
             </div>
           </div>
         </div>
+
+
       </React.Fragment>
     );
   }

@@ -5,7 +5,7 @@ function Search(props) {
       <div>
         <p>Showing {props.noOfMovies} movies from the list</p>
         <button type="button" className="btn btn-primary mb-4">
-          Primary{" "}
+          New{" "}
         </button>
 
         <div className="input-group mb-3">

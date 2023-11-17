@@ -1,12 +1,20 @@
+import { Link } from "react-router-dom";
+
 function Navbar() {
+
+//  let allNavItems = document.querySelector(".active");
+//  console.log(allNavItems);
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Navbar
+    <nav
+      class="navbar navbar-expand-lg bg-body-tertiary"
+      data-bs-theme="dark"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          MovieRentals
         </a>
         <button
-          className="navbar-toggler"
+          class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -14,29 +22,29 @@ function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Home
-              </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <Link class="nav-link active" aria-current="page" to="/">
+                Movie
+              </Link>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Features
-              </a>
+            <li class="nav-item">
+              <Link class="nav-link" to="/customers">
+                Customers
+              </Link>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Pricing
-              </a>
+            <li class="nav-item">
+              <Link class="nav-link" to="/rentals">
+                Rentals
+              </Link>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Disabled
-              </a>
+            <li class="nav-item">
+              <Link class="nav-link" to="/login">
+                Login
+              </Link>
             </li>
           </ul>
         </div>

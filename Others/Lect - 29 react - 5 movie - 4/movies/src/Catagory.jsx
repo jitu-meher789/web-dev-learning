@@ -9,7 +9,7 @@ class Catagory extends React.Component {
   async componentDidMount() {
     // fetch("/genre").then(function(res) {
     //   return res.json()
-    // }).then((jso) =>{
+    // }).then((jso) =>{ 
     //   console.log(json);
     //   this.setState({allGenres:jso});
     // })
