@@ -63,3 +63,7 @@ backgroundColorBtn.addEventListener("click",function(e) {
     })
     colorPicker.click();
 });
+
+
+
+

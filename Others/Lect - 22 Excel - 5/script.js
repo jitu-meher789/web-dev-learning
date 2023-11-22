@@ -10,7 +10,74 @@ let formulaInput = document.querySelector("#complete-formula");
 
 let grid = document.querySelector(".grid");
 let menuBarPTags = document.querySelectorAll(".menu-bar p");
-// console.log(menuBarPTags);
+let fileOptions = menuBarPTags[0];
+
+
+let dataObject = {};
+
+
+
+fileOptions.addEventListener("click", function (e) {
+  if (e.currentTarget.classList.length == 0) {
+    e.currentTarget.innerHTML = `File <span>
+    <span>Clear</span>
+    <span>Open</span>
+    <span>Save</span>
+  </span>`;
+
+    let allFileOptions = e.currentTarget.querySelectorAll("span>span");
+
+    // clear the spread sheer
+    allFileOptions[0].addEventListener("click", function (e) {
+      let allCells = document.querySelectorAll(".cell");
+      for (let i = 0; i < allCells.length; i++) {
+        allCells[i].innerText = "";
+        let cellAdd = allCells[i].getAttribute("data-address");
+        dataObject[cellAdd] = {
+          value: "",
+          formula: "",
+          upstream: [],
+          downstream: [],
+          fontSize: 10,
+          fontFamily: "Arial",
+          fontWeight: "normal",
+          fontColor: "black",
+          backgroundColor: "white",
+          underline: "none",
+          italics: "normal",
+          textAlign: "left",
+        };
+      }
+    });
+
+    // Open an new spread sheet
+    allFileOptions[1].addEventListener("click", function (e) {
+      
+
+      // fetch data from local storage
+      dataObject = JSON.parse(localStorage.getItem("sheet"));
+      // replace with dataobject
+
+      for(let j= 1; j <= 100;j++) {
+        for(let i = 0; i < 26; i++ ) {
+          let address = String.fromCharCode(i + 65) + j;
+          let cellObj = dataObject[address];
+          let cellOnUi = document.querySelector(`[data-address="${address}"]`);
+          cellOnUi.innerText = cellObj.value;
+        }
+      }
+      // populate on UI
+    }); 
+
+    // save the spred sheet
+    allFileOptions[2].addEventListener("click", function (e) {
+       localStorage.setItem("sheet", JSON.stringify(dataObject));
+       alert("sheet saved");
+    });
+  } else {
+    e.currentTarget.innerHTML = `File`;
+  }
+});
 
 // menu bar toggle effect
 for (let i = 0; i < menuBarPTags.length; i++) {
@@ -44,7 +111,6 @@ for (let i = 1; i <= 100; i++) {
   rowNumbers.append(div);
 }
 
-let dataObject = {};
 
 // create 26 * 100 cells in a grid section
 for (let j = 1; j <= 100; j++) {
@@ -68,8 +134,8 @@ for (let j = 1; j <= 100; j++) {
       fontColor: "black",
       backgroundColor: "white",
       underline: "none",
-      italics : "normal",
-      textAlign:"left",
+      italics: "normal",
+      textAlign: "left",
     };
 
     cell.addEventListener("click", function (e) {
@@ -85,7 +151,7 @@ for (let j = 1; j <= 100; j++) {
     });
 
     cell.addEventListener("input", function (e) {
-      console.log(e.currentTarget.innerText);
+      // console.log(e.currentTarget.innerText);
       let address = e.currentTarget.getAttribute("data-address");
 
       dataObject[address].value = Number(e.currentTarget.innerText);
@@ -157,41 +223,38 @@ formulaInput.addEventListener("change", function (e) {
   // clear old upstream
   let oldUpstream = dataObject[selectedCellAddress].upstream;
 
-  for(let k = 0; k < oldUpstream.length; k++) {
+  for (let k = 0; k < oldUpstream.length; k++) {
     removeFromUpstream(selectedCellAddress, oldUpstream[k]);
   }
   dataObject[selectedCellAddress].upstream = elementsArr;
 
-  for(let j = 0; j < elementsArr.length; j++) {
-    addToDownstream(selectedCellAddress,elementsArr[j])
+  for (let j = 0; j < elementsArr.length; j++) {
+    addToDownstream(selectedCellAddress, elementsArr[j]);
   }
 
+  for (let i = 0; i < elementsArr.length; i++) {
+    let formulaDependancy = elementsArr[i];
 
-  for(let i = 0; i < elementsArr.length; i++) {
-     let formulaDependancy = elementsArr[i];
-
-     valObj[formulaDependancy] = dataObject[formulaDependancy].value;
+    valObj[formulaDependancy] = dataObject[formulaDependancy].value;
   }
 
-  for(let j = 0; j < formulaArr.length; j++) {
-    if(valObj[formulaArr[j]] != undefined) {
+  for (let j = 0; j < formulaArr.length; j++) {
+    if (valObj[formulaArr[j]] != undefined) {
       formulaArr[j] = valObj[formulaArr[j]];
     }
   }
-
 
   console.log(valObj);
   console.log(formulaArr);
 
   formula = formulaArr.join(" ");
-  console.log(formula)
+  console.log(formula);
   let newValue = eval(formula);
   dataObject[selectedCellAddress].value = newValue;
 
-
   let selectedCellDownstream = dataObject[selectedCellAddress].downstream;
 
-  for(let i = 0; i < selectedCellDownstream; i++) {
+  for (let i = 0; i < selectedCellDownstream; i++) {
     updateDownstreamElements(selectedCellDownstream[i]);
   }
 
@@ -199,15 +262,12 @@ formulaInput.addEventListener("change", function (e) {
   formulaInput.value = "";
 });
 
-
 function addToDownstream(tobeAdded, inWhichWeAreAdding) {
-
   // dataObject[inWhichWeAreAdding].downstream.push(tobeAdded);
 
   // get downstream fo the cell in which we have to add
   let reqDownstream = dataObject[inWhichWeAreAdding].downstream;
   reqDownstream.push(tobeAdded);
-
 }
 
 function removeFromUpstream(dependant, OnWhichItIsDepending) {
