@@ -15,6 +15,7 @@ const App = () => {
   useEffect(() => {
     let f = () => {
       const q = query(collection(db, "posts"));
+
       onSnapshot(q, (querySnapshot) => {
         let tempArr = [];
         querySnapshot.forEach((doc) => {
