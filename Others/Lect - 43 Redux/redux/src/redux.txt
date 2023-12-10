@@ -1,0 +1,13 @@
+Redux has 3 core concepts 
+  * Action
+  * Reducers
+  * Store
+
+
+Action -> it is a object.
+        It tells what we want to change the state.
+
+Reducers -> it is function (pure function), which contains initial and
+            previous state and how to change the state based on your Action
+
+Store -> It is a place where all Reducers and state are stored
